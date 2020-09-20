@@ -1,10 +1,13 @@
-package com.example.NotesApp;
+package com.example.NotesApp.List;
 
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.NotesApp.Notes;
+import com.example.NotesApp.R;
 
 public class ViewHolder extends RecyclerView.ViewHolder {
 
