@@ -9,10 +9,12 @@ import androidx.room.Update;
 
 import com.example.NotesApp.Notes;
 
+import java.util.List;
+
 @Dao
 public interface NotesDao {
     @Query("SELECT * FROM Notes ORDER BY Id asc")
-    LiveData<Notes> getAlNotes();
+    LiveData<List<Notes>> getAlNotes();
 
     @Insert
     public void InsertNotes(Notes notes);
