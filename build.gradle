@@ -28,4 +28,5 @@ ext {
     archLifecycleVersion = '2.2.0'
     coreTestingVersion = '2.1.0'
     materialVersion = '1.0.0'
+    paging_version = "2.1.2"
 }

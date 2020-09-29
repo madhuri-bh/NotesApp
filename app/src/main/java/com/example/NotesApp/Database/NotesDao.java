@@ -1,20 +1,15 @@
 package com.example.NotesApp.Database;
 
-import androidx.lifecycle.LiveData;
+import androidx.paging.DataSource;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-
 import com.example.NotesApp.Notes;
-
-import java.util.List;
 
 @Dao
 public interface NotesDao {
-    @Query("SELECT * FROM Notes ORDER BY Id asc")
-    LiveData<List<Notes>> getAlNotes();
 
     @Insert
     public void InsertNotes(Notes notes);
@@ -24,5 +19,8 @@ public interface NotesDao {
 
     @Delete
     public void DeleteNotes(Notes notes);
+
+    @Query("SELECT * FROM Notes ORDER BY Id asc")
+    DataSource.Factory<Integer,Notes> getAllNotes();
 
 }
