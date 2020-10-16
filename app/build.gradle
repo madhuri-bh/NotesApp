@@ -41,6 +41,9 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:$rootProject.archLifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel:$rootProject.archLifecycleVersion"
     implementation "androidx.paging:paging-runtime:$rootProject.paging_version"
+    //Material dependency
+    implementation 'com.google.android.material:material:1.1.0'
+   implementation "androidx.lifecycle:lifecycle-extensions:2.2.0-beta01"
 
 
 }

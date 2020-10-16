@@ -14,15 +14,15 @@ import java.util.concurrent.Executors;
 public class NotesRepository {
     private static NotesRepository notesRepository = null;
     private NotesDao notesDao;
-    private static int PAGE_SIZE = 15;
+    private int PAGE_SIZE = 15;
     private ExecutorService executors = Executors.newSingleThreadExecutor();
 
     public NotesRepository(Application application) {
         NotesDatabase database = NotesDatabase.getInstance(application);
-        NotesDao dao = database.notesDao();
+        notesDao = database.notesDao();
     }
 
-    public NotesRepository getNotesRepository(Application application) {
+    public static NotesRepository getNotesRepository(Application application) {
         if (notesRepository == null) {
             synchronized (NotesRepository.class) {
 
@@ -33,13 +33,14 @@ public class NotesRepository {
         }
         return notesRepository;
     }
+
     public void insertNotes(final Notes notes) {
-executors.execute(new Runnable() {
-    @Override
-    public void run() {
-        notesDao.InsertNotes(notes);
-    }
-});
+        executors.execute(new Runnable() {
+            @Override
+            public void run() {
+                notesDao.InsertNotes(notes);
+            }
+        });
     }
 
     public void updateNotes(final Notes notes) {

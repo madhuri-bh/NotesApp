@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp">
 
     <TextView
         android:id="@+id/title"
@@ -13,7 +14,7 @@
         tools:text="Title"
         android:textSize="20sp"
         android:textColor="@android:color/black"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
         android:padding="16dp"/>
 
     <TextView
@@ -23,9 +24,7 @@
         tools:text="Content"
         android:textSize="20sp"
         android:textColor="@android:color/black"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
         android:padding="16dp"/>
-    
-
 
 </LinearLayout>

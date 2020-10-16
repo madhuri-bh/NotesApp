@@ -2,29 +2,39 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="8dp">
 
     <EditText
         android:id="@+id/edit_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
+        android:inputType="text"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:paddingTop="16dp"/>
 
     <EditText
         android:id="@+id/edit_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/content"
+        android:inputType="textMultiLine"
         android:maxLines="10"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
         android:textSize="20sp"
         android:textColor="@android:color/black"
         android:paddingTop="16dp"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="@string/submit" />
+
 
 </LinearLayout>

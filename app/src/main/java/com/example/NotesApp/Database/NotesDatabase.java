@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.NotesApp.Notes;
 
-@Database(entities = {Notes.class}, version = 1, exportSchema = false)
+@Database(entities = {Notes.class}, version = 2, exportSchema = false)
 public abstract class NotesDatabase extends RoomDatabase {
 
     public abstract NotesDao notesDao();
@@ -21,7 +21,7 @@ public abstract class NotesDatabase extends RoomDatabase {
         if (INSTANCE == null) {
             synchronized (NotesDatabase.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                    INSTANCE = Room.databaseBuilder(context,
                             NotesDatabase.class,
                             "NotesDatabase").addCallback(new Callback() {
                         @Override
@@ -35,4 +35,3 @@ public abstract class NotesDatabase extends RoomDatabase {
         return INSTANCE;
     }
 }
-
